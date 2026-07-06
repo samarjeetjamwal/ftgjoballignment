@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samar Jeet Jamwal — Chief Accountant | Flame Tree Group Holdings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #FAF8F4;
+            --bg-warm: #F3EDE4;
+            --fg: #1A1A1A;
+            --fg-muted: #5C5C5C;
+            --fg-light: #8A8A8A;
+            --accent: #C8963E;
+            --accent-light: #E8C468;
+            --accent-dark: #9A7230;
+            --green-deep: #1B4332;
+            --green-mid: #2D6A4F;
+            --green-light: #40916C;
+            --green-pale: #D8F3DC;
+            --card: #FFFFFF;
+            --border: #E8E2D8;
+            --border-light: #F0EBE3;
+            --danger: #B03A2E;
+            --danger-light: #FADBD8;
+            --success: #1E8449;
+            --success-light: #D5F5E3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Subtle background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(27,67,50,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(200,150,62,0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(27,67,50,0.02) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--green-deep) 0%, #143728 40%, #1a3d2e 70%, var(--green-mid) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(200,150,62,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-glow 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(64,145,108,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-glow 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-glow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -20px) scale(1.1); }
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Gold accent line */
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 2px;
+        }
+
+        .gold-line-wide {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        /* Section styling */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(27,67,50,0.08), 0 2px 8px rgba(200,150,62,0.06);
+            transform: translateY(-2px);
+        }
+
+        /* Fit score ring */
+        .fit-ring {
+            width: 140px; height: 140px;
+            position: relative;
+        }
+
+        .fit-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .fit-ring .ring-bg {
+            fill: none;
+            stroke: var(--border);
+            stroke-width: 8;
+        }
+
+        .fit-ring .ring-fill {
+            fill: none;
+            stroke: url(#goldGrad);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 408;
+            stroke-dashoffset: 408;
+            animation: ring-fill 2s ease-out 0.5s forwards;
+        }
+
+        @keyframes ring-fill {
+            to { stroke-dashoffset: 57; }
+        }
+
+        .fit-ring .ring-text {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Requirement match bars */
+        .match-bar-bg {
+            height: 6px;
+            background: var(--border-light);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .match-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        .match-bar-fill.high { background: linear-gradient(90deg, var(--green-mid), var(--green-light)); }
+        .match-bar-fill.medium { background: linear-gradient(90deg, var(--accent-dark), var(--accent)); }
+        .match-bar-fill.low { background: linear-gradient(90deg, #B03A2E, #E74C3C); }
+
+        /* Financial metric cards */
+        .metric-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+        }
+
+        .metric-card.positive::before { background: var(--success); }
+        .metric-card.negative::before { background: var(--danger); }
+        .metric-card.neutral::before { background: var(--accent); }
+        .metric-card.insight::before { background: var(--green-mid); }
+
+        /* Recommendation cards */
+        .rec-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .rec-card:hover {
+            border-color: var(--green-light);
+            box-shadow: 0 4px 20px rgba(27,67,50,0.08);
+        }
+
+        .rec-number {
+            width: 36px; height: 36px;
+            background: var(--green-deep);
+            color: var(--accent-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 32px;
+            padding-bottom: 32px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 7px; top: 24px; bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item:last-child::before { display: none; }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0; top: 6px;
+            width: 16px; height: 16px;
+            background: var(--green-deep);
+            border: 3px solid var(--green-pale);
+            border-radius: 50%;
+        }
+
+        /* Tag pills */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .tag-green { background: var(--green-pale); color: var(--green-deep); }
+        .tag-gold { background: #FEF5E0; color: var(--accent-dark); }
+        .tag-red { background: var(--danger-light); color: var(--danger); }
+        .tag-gray { background: #F0F0F0; color: var(--fg-muted); }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(250,248,244,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .top-nav.show { transform: translateY(0); }
+
+        .nav-link {
+            color: var(--fg-muted);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--green-deep);
+            background: var(--green-pale);
+        }
+
+        /* Contribution impact card */
+        .impact-card {
+            background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+            color: white;
+            border-radius: 12px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card::after {
+            content: '';
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(200,150,62,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Financial insight callout */
+        .insight-callout {
+            background: linear-gradient(135deg, #FEF9F0, #FDF5E6);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 10px 10px 0;
+            padding: 20px 24px;
+        }
+
+        /* Table styling */
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 14px;
+        }
+
+        .data-table thead th {
+            background: var(--green-deep);
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table thead th:first-child { border-radius: 8px 0 0 0; }
+        .data-table thead th:last-child { border-radius: 0 8px 0 0; }
+
+        .data-table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .data-table tbody tr:hover { background: rgba(27,67,50,0.02); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+
+        /* Print styles */
+        @media print {
+            .top-nav, .hero::before, .hero::after, .hero-grid { display: none; }
+            .card:hover { transform: none; box-shadow: none; }
+            body { font-size: 11px; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem !important; }
+            .section-container { padding: 0 16px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--fg-light); }
+
+        .pulse-dot {
+            width: 8px; height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(30,132,73,0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(30,132,73,0); }
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- Fixed Navigation -->
+        <nav class="top-nav" id="topNav" role="navigation" aria-label="Section navigation">
+            <div class="section-container" style="max-width:1200px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <div style="width:28px;height:28px;background:var(--green-deep);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+                            <span style="color:var(--accent-light);font-weight:800;font-size:11px;font-family:'Playfair Display',serif;">SJ</span>
+                        </div>
+                        <span style="font-weight:600;font-size:13px;color:var(--green-deep);">Job Alignment Portfolio</span>
+                    </div>
+                    <div style="display:flex;gap:2px;flex-wrap:wrap;">
+                        <a href="#alignment" class="nav-link">Fit Analysis</a>
+                        <a href="#financials" class="nav-link">Financial Review</a>
+                        <a href="#gaps" class="nav-link">Gap Analysis</a>
+                        <a href="#roadmap" class="nav-link">Roadmap</a>
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero" style="padding:80px 0 60px;">
+            <div class="hero-grid"></div>
+            <div class="section-container" style="position:relative;z-index:2;">
+                <div style="display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;" class="hero-grid-layout">
+                    <div>
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                            <div class="pulse-dot"></div>
+                            <span style="color:var(--accent-light);font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;">Application for Chief Accountant</span>
+                        </div>
+                        <h1 style="font-size:3.2rem;font-weight:800;color:white;line-height:1.15;margin-bottom:16px;">
+                            Samar Jeet Jamwal
+                        </h1>
+                        <p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:8px;font-weight:300;">
+                            Senior Finance, Credit Control & Commercial Leader
+                        </p>
+                        <p style="font-size:0.95rem;color:rgba(255,255,255,0.5);margin-bottom:32px;">
+                            20+ Years &middot; FMCG &middot; Manufacturing &middot; East Africa &middot; AI-Driven Finance
+                        </p>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                            <a href="#alignment" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:var(--green-deep);border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--accent-light)'" onmouseout="this.style.background='var(--accent)'">
+                                View Alignment Analysis <i class="fas fa-arrow-down" style="font-size:12px;"></i>
+                            </a>
+                            <a href="https://samarjeetjamwal.github.io/portfolio/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:rgba(255,255,255,0.08);color:white;border:1px solid rgba(255,255,255,0.15);border-radius:8px;font-weight:500;font-size:14px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+                                Full Portfolio <i class="https://samarjeetjamwal.github.io/portfolio/" style="font-size:11px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="text-align:center;">
+                        <div class="fit-ring">
+                            <svg width="140" height="140" viewBox="0 0 140 140">
+                                <defs>
+                                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#C8963E"/>
+                                        <stop offset="100%" style="stop-color:#E8C468"/>
+                                    </linearGradient>
+                                </defs>
+                                <circle class="ring-bg" cx="70" cy="70" r="65"/>
+                                <circle class="ring-fill" cx="70" cy="70" r="65"/>
+                            </svg>
+                            <div class="ring-text">
+                                <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--accent-light);line-height:1;">86%</div>
+                                <div style="font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-top:2px;">Role Fit</div>
+                            </div>
+                        </div>
+                        <p style="color:rgba(255,255,255,0.4);font-size:11px;margin-top:12px;">Overall JD Alignment Score</p>
+                    </div>
+                </div>
+
+                <!-- Target company info bar -->
+                <div style="margin-top:48px;padding:20px 24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+                    <div style="display:flex;align-items:center;gap:16px;">
+                        <div style="width:44px;height:44px;background:rgba(200,150,62,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-tree" style="color:var(--accent-light);font-size:18px;"></i>
+                        </div>
+                        <div>
+                            <div style="color:white;font-weight:600;font-size:15px;">Application for Chief Accountant Role</div>
+                            <div style="color:rgba(255,255,255,0.45);font-size:12px;">Department &middot; Administration: Finance &middot; Nairobi, Kenya</div>
+                        </div>
+                    </div>
+                    
+            </div>
+        </header>
+
+        <div class="gold-line-wide" style="height:3px;"></div>
+
+        <!-- Section 1: Role Fit Analysis -->
+        <section id="alignment" style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">Role Fit Analysis</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:640px;">A systematic mapping of every requirement in the Chief Accountant job description against demonstrated qualifications and experience.</p>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));gap:16px;">
+                    <!-- Requirement cards -->
+                    <div class="card reveal stagger-1" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-graduation-cap" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">Education & Qualification</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">B.Com/M.Com/MBA + CPA(K)</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">95%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="95"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">MBA Finance + M.Com + B.Sc Mathematics. Certificate in Advanced Computer Accounts. CPA equivalence through extensive professional practice spanning two decades across three countries.</p>
+                    </div>
+
+                    <div class="card reveal stagger-2" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-briefcase" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">Experience: 7+ Years, 3+ Managerial</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">Manufacturing environment preferred</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">100%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="100"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">20+ years total experience. 9+ years in managerial roles (Sr. Manager, Manager). Direct manufacturing exposure at Devyani Food Industries (Nairobi) and Faces Cosmetics India — both FMCG/manufacturing environments.</p>
+                    </div>
+
+                    <div class="card reveal stagger-3" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-landmark" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">Kenyan Tax & Statutory Compliance</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">VAT, PAYE, NSSF, SHIF</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">90%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="90"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">7.5 years hands-on experience in Kenyan tax compliance at Devyani Food Industries, Nairobi. Managed VAT filings, PAYE, NSSF remittances, and worked directly with KRA. Professional Swahili communication ensures seamless regulatory interaction.</p>
+                    </div>
+
+                    <div class="card reveal stagger-4" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:#FEF5E0;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-laptop-code" style="color:var(--accent-dark);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">ERP & Advanced Excel</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">SAP, Oracle, NetSuite preferred</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-gold">80%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill medium" data-width="80"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">Proficient in SAP ERP, Tally ERP, Wiza ERP, Techsmith ERP, and Vesta ERP. Advanced Excel including pivot tables, dashboards, and financial modeling. Microsoft 365 Copilot user. Adaptable to any ERP system rapidly.</p>
+                    </div>
+
+                    <div class="card reveal stagger-5" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-robot" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">AI Tools for Finance (Added Advantage)</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">Automation, analysis, reporting</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">95%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="95"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">Actively leverages Claude, Grok, DeepSeek for AI-automated MIS, financial analysis, and process automation. Uses GitHub, Lovable AI for workflow automation. This is a distinctive differentiator — most candidates will not have this capability.</p>
+                    </div>
+
+                    <div class="card reveal stagger-6" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-file-invoice-dollar" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">IFRS & Financial Reporting</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">Statements, management reports</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">88%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="88"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">Extensive experience preparing financial statements, management reports, variance analysis, and MIS across Indian and African accounting standards. Coordinated multiple external audits. Practical IFRS application through cross-border operations.</p>
+                    </div>
+
+                    <div class="card reveal stagger-1" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-users" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">Team Leadership & Stakeholder Management</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">Cross-functional, mentorship</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">92%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="92"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">Led and mentored finance teams across multiple organisations. Managed cross-functional collaboration with Sales, Operations, and Logistics at Devyani. Experience interacting with banks, auditors, KRA, and senior leadership including directors.</p>
+                    </div>
+
+                    <div class="card reveal stagger-2" style="padding:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:36px;height:36px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-warehouse" style="color:var(--green-deep);font-size:14px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:14px;">Inventory, Costing & Stock Reconciliation</div>
+                                    <div style="font-size:11px;color:var(--fg-light);">Product costing, stores coordination</div>
+                                </div>
+                            </div>
+                            <span class="tag tag-green">85%</span>
+                        </div>
+                        <div class="match-bar-bg" style="margin-bottom:12px;">
+                            <div class="match-bar-fill high" data-width="85"></div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);">Hands-on inventory control at Nathpa Jhakri JV and Faces Cosmetics. Stock monitoring, reconciliation, and valuation experience. Procurement cost savings of 15-20% at TSI Architects demonstrate deep costing and vendor management capability.</p>
+                    </div>
+                </div>
+
+                <!-- Summary row -->
+                <div class="reveal" style="margin-top:32px;padding:24px 28px;background:var(--green-deep);border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+                    <div>
+                        <div style="color:var(--accent-light);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Composite Alignment</div>
+                        <div style="color:white;font-size:20px;font-weight:700;font-family:'Playfair Display',serif;">86% Overall Role Fit</div>
+                    </div>
+                    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+                        <div style="text-align:center;">
+                            <div style="color:var(--accent-light);font-size:22px;font-weight:700;">6</div>
+                            <div style="color:rgba(255,255,255,0.5);font-size:11px;">Strong Matches</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="color:var(--accent-light);font-size:22px;font-weight:700;">2</div>
+                            <div style="color:rgba(255,255,255,0.5);font-size:11px;">Good Matches</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="color:var(--accent-light);font-size:22px;font-weight:700;">0</div>
+                            <div style="color:rgba(255,255,255,0.5);font-size:11px;">Gaps</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="color:var(--accent-light);font-size:22px;font-weight:700;">1</div>
+                            <div style="color:rgba(255,255,255,0.5);font-size:11px;">Differentiator</div>
+                        </div>
+                    </div>
+                    <div style="max-width:280px;">
+                        <div style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;">
+                            <i class="fas fa-star" style="color:var(--accent-light);font-size:10px;"></i> <strong style="color:white;">Key Differentiator:</strong> AI-assisted financial reporting and automation skills — explicitly listed as "added advantage" in the JD — provide a unique competitive edge no typical CPA candidate offers.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Section 2: Financial Statement Review -->
+        <section id="financials" style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">FTG Holdings FY2025 — Financial Review</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:700px;">A structured reading of the published financials, identifying strengths, concerns, and the areas where the Chief Accountant can create the most immediate impact.</p>
+                </div>
+
+                <!-- KPI Dashboard -->
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;margin-bottom:40px;">
+                    <div class="metric-card positive reveal stagger-1">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Revenue</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--green-deep);font-family:'Playfair Display',serif;">KES 4.23B</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-arrow-up" style="font-size:10px;"></i> +2% YoY</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Steady but modest growth</div>
+                    </div>
+                    <div class="metric-card positive reveal stagger-2">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Gross Margin</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--green-deep);font-family:'Playfair Display',serif;">38%</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-arrow-up" style="font-size:10px;"></i> +3pp from 35%</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Strong mix improvement</div>
+                    </div>
+                    <div class="metric-card positive reveal stagger-3">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">EBITDA</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--green-deep);font-family:'Playfair Display',serif;">KES 384.5M</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-arrow-up" style="font-size:10px;"></i> +18% YoY</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Excl. prior year insurance</div>
+                    </div>
+                    <div class="metric-card negative reveal stagger-4">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Net Profit / (Loss)</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--danger);font-family:'Playfair Display',serif;">(KES 15.9M)</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-arrow-up" style="font-size:10px;"></i> Improved from (91.7M)</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Still in net loss territory</div>
+                    </div>
+                    <div class="metric-card negative reveal stagger-5">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Finance Costs</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--danger);font-family:'Playfair Display',serif;">KES 295.4M</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-arrow-down" style="font-size:10px;"></i> -23% YoY</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Still exceeds Op. Profit</div>
+                    </div>
+                    <div class="metric-card neutral reveal stagger-6">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Net Debt / EBITDA</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--accent-dark);font-family:'Playfair Display',serif;">4.6x</div>
+                        <div style="font-size:12px;color:var(--fg-light);font-weight:600;margin-top:4px;">Improved from historical highs</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Target: below 3.0x</div>
+                    </div>
+                    <div class="metric-card positive reveal stagger-1">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Working Capital Days</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--green-deep);font-family:'Playfair Display',serif;">41 Days</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-check" style="font-size:10px;"></i> Improved</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Can target 30-35 days</div>
+                    </div>
+                    <div class="metric-card insight reveal stagger-2">
+                        <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Net Assets</div>
+                        <div style="font-size:24px;font-weight:700;color:var(--green-deep);font-family:'Playfair Display',serif;">KES 1.53B</div>
+                        <div style="font-size:12px;color:var(--success);font-weight:600;margin-top:4px;"><i class="fas fa-arrow-up" style="font-size:10px;"></i> +25% growth</div>
+                        <div style="font-size:11px;color:var(--fg-light);margin-top:4px;">Capex-driven growth</div>
+                    </div>
+                </div>
+
+                <!-- Critical Insight Callout -->
+                <div class="insight-callout reveal" style="margin-bottom:40px;">
+                    <div style="display:flex;align-items:start;gap:14px;">
+                        <i class="fas fa-exclamation-triangle" style="color:var(--accent-dark);font-size:18px;margin-top:3px;flex-shrink:0;"></i>
+                        <div>
+                            <div style="font-weight:700;font-size:15px;color:var(--accent-dark);margin-bottom:6px;">Critical Observation: The Finance Cost — Operating Profit Gap</div>
+                            <p style="font-size:14px;color:var(--fg-muted);line-height:1.7;">
+                                The single most important number in this report: <strong>Finance Costs (KES 295.4M) exceed Operating Profit (KES 233.4M) by KES 62 million.</strong> Despite a 23% reduction in interest costs and an 18% EBITDA improvement, the Group is still paying more to service debt than it earns from core operations. This is the structural barrier preventing a return to profitability. The EBITDA-to-Net-Profit conversion gap of approximately KES 400.4M (KES 384.5M EBITDA + KES 15.9M net loss) signals heavy depreciation from the new PET and injection moulding machines, combined with residual finance costs. As Chief Accountant, my immediate priority would be supporting the GCFO in accelerating debt paydown and improving the EBITDA-to-net-profit conversion ratio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P&L Bridge Table -->
+                <div class="card reveal" style="padding:0;overflow:hidden;margin-bottom:40px;">
+                    <div style="padding:20px 24px;background:var(--green-deep);display:flex;align-items:center;gap:10px;">
+                        <i class="fas fa-chart-bar" style="color:var(--accent-light);"></i>
+                        <span style="color:white;font-weight:600;font-size:14px;">Simplified EBITDA-to-Net-Profit Bridge (FY2025)</span>
+                    </div>
+                    <div style="overflow-x:auto;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Line Item</th>
+                                    <th style="text-align:right;">Amount (KES M)</th>
+                                    <th style="text-align:right;">% of Revenue</th>
+                                    <th>Commentary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight:600;">Revenue</td>
+                                    <td style="text-align:right;font-weight:600;">4,230.0</td>
+                                    <td style="text-align:right;">100.0%</td>
+                                    <td style="font-size:13px;color:var(--fg-muted);">+2% organic growth</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:24px;color:var(--fg-muted);">Cost of Sales</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">(2,622.6)</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">62.0%</td>
+                                    <td style="font-size:13px;color:var(--fg-muted);">Improved from 65% in FY24</td>
+                                </tr>
+                                <tr style="background:var(--green-pale);">
+                                    <td style="font-weight:700;color:var(--green-deep);">Gross Profit</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--green-deep);">1,607.4</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--green-deep);">38.0%</td>
+                                    <td style="font-size:13px;color:var(--green-deep);">Strong margin expansion</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:24px;color:var(--fg-muted);">Operating Expenses</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">(1,374.0)</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">32.5%</td>
+                                    <td style="font-size:13px;color:var(--fg-muted);">Implied from EBITDA bridge</td>
+                                </tr>
+                                <tr style="background:#FEF9F0;">
+                                    <td style="font-weight:700;color:var(--accent-dark);">EBITDA</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--accent-dark);">384.5</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--accent-dark);">9.1%</td>
+                                    <td style="font-size:13px;color:var(--accent-dark);">+18% YoY, healthy margin</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:24px;color:var(--fg-muted);">Depreciation & Amortisation</td>
+                                    <td style="text-align:right;color:var(--danger);">(151.1)</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">3.6%</td>
+                                    <td style="font-size:13px;color:var(--danger);">Elevated due to new capex (PET machines)</td>
+                                </tr>
+                                <tr style="background:#FEF9F0;">
+                                    <td style="font-weight:700;color:var(--accent-dark);">Operating Profit (EBIT)</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--accent-dark);">233.4</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--accent-dark);">5.5%</td>
+                                    <td style="font-size:13px;color:var(--accent-dark);">Solid operational performance</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:24px;color:var(--danger);font-weight:600;">Finance Costs</td>
+                                    <td style="text-align:right;color:var(--danger);font-weight:600;">(295.4)</td>
+                                    <td style="text-align:right;color:var(--danger);font-weight:600;">7.0%</td>
+                                    <td style="font-size:13px;color:var(--danger);font-weight:600;">EXCEEDS operating profit by KES 62M</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:24px;color:var(--fg-muted);">Other items / Tax</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">(46.5)*</td>
+                                    <td style="text-align:right;color:var(--fg-muted);">1.1%*</td>
+                                    <td style="font-size:13px;color:var(--fg-light);font-style:italic;">*Implied balancing figure</td>
+                                </tr>
+                                <tr style="background:var(--danger-light);">
+                                    <td style="font-weight:700;color:var(--danger);">Net Loss</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--danger);">(15.9)</td>
+                                    <td style="text-align:right;font-weight:700;color:var(--danger);">(0.4%)</td>
+                                    <td style="font-size:13px;color:var(--danger);">Improved from (91.7M) but still loss-making</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Segment Performance -->
+                <div class="reveal" style="margin-bottom:40px;">
+                    <h3 style="font-size:1.3rem;font-weight:700;color:var(--green-deep);margin-bottom:20px;">Segment Performance Highlights</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;">
+                        <div class="card" style="padding:24px;">
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                                <div style="width:40px;height:40px;background:linear-gradient(135deg,#1B4332,#2D6A4F);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-tint" style="color:white;font-size:16px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:15px;">Water, Sanitation & Packaging</div>
+                                    <span class="tag tag-green" style="margin-top:4px;">+8% Growth</span>
+                                </div>
+                            </div>
+                            <p style="font-size:13px;color:var(--fg-muted);line-height:1.6;">Strongest performing segment. Jojo Plastics expansion with 7 new PET machines and 4 injection moulding machines positions this division for continued growth. Key focus: ensuring these capex investments deliver projected ROI through accurate product costing and depreciation management.</p>
+                        </div>
+                        <div class="card" style="padding:24px;">
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                                <div style="width:40px;height:40px;background:linear-gradient(135deg,#9A7230,#C8963E);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-shopping-basket" style="color:white;font-size:16px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:15px;">FMCG</div>
+                                    <span class="tag tag-green" style="margin-top:4px;">+5.1% Growth</span>
+                                </div>
+                            </div>
+                            <p style="font-size:13px;color:var(--fg-muted);line-height:1.6;">Wills Antiseptic relaunch, Loosafe Toilet Cleaner expansion, and Alana Vitamin C skincare line are driving traction. Key focus: SKU-level profitability analysis, working capital optimisation for FMCG distribution channels, and cost-to-serve modelling for each product line.</p>
+                        </div>
+                        <div class="card" style="padding:24px;">
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                                <div style="width:40px;height:40px;background:linear-gradient(135deg,#5C5C5C,#8A8A8A);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-tree" style="color:white;font-size:16px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight:600;font-size:15px;">ESG & Sustainability</div>
+                                    <span class="tag tag-gold" style="margin-top:4px;">Strategic Value</span>
+                                </div>
+                            </div>
+                            <p style="font-size:13px;color:var(--fg-muted);line-height:1.6;">48.6M litres water recycled, 1,353 tonnes plastic recycled, 17% GHG reduction, 131,000 kWh solar savings. Governance score 81.60/100. Key focus: quantifying ESG cost savings, carbon credit potential, and integrating ESG metrics into management reporting dashboards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Section 3: Gap Analysis & Recommendations -->
+        <section id="gaps" style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">Identified Gaps & Strategic Recommendations</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:700px;">What the FY2025 financials reveal as areas of concern, and specific, actionable steps I would take as Chief Accountant to address each one.</p>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:20px;">
+                    <!-- Recommendation 1 -->
+                    <div class="rec-card reveal stagger-1">
+                        <div style="display:flex;align-items:start;gap:16px;">
+                            <div class="rec-number">1</div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+                                    <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Bridge the Finance Cost — Operating Profit Gap</h4>
+                                    <span class="tag tag-red">Critical Priority</span>
+                                </div>
+                                <p style="font-size:14px;color:var(--fg-muted);margin-bottom:14px;line-height:1.7;">
+                                    With finance costs (KES 295.4M) exceeding operating profit (KES 233.4M) by KES 62M, debt servicing remains the primary obstacle to profitability. A 23% reduction is encouraging but insufficient.
+                                </p>
+                                <div style="background:var(--bg);border-radius:8px;padding:16px 20px;">
+                                    <div style="font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">My Action Plan</div>
+                                    <ul style="font-size:13px;color:var(--fg-muted);line-height:2;padding-left:16px;">
+                                        <li>Support GCFO in renegotiating existing debt facilities — target 200-300bps rate reduction through competitive bank bidding</li>
+                                        <li>Model debt restructuring scenarios: convert short-term working capital debt to longer-term facilities to reduce annual servicing burden</li>
+                                        <li>Build a rolling 13-week cash flow forecast (using AI-enhanced tools) to optimise timing of debt repayments and minimise idle cash</li>
+                                        <li>Identify and liquidate non-performing or underutilised assets to accelerate debt paydown — target KES 100-150M in 12 months</li>
+                                        <li>Prepare investor-grade debt capacity analysis to support GCFO's negotiations with lenders</li>
+                                    </ul>
+                                </div>
+                                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                                    <span class="tag tag-gray"><i class="fas fa-clock" style="font-size:10px;margin-right:4px;"></i> Immediate — First 90 Days</span>
+                                    <span class="tag tag-gray"><i class="fas fa-bullseye" style="font-size:10px;margin-right:4px;"></i> Target: Finance costs below KES 220M in FY2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div class="rec-card reveal stagger-2">
+                        <div style="display:flex;align-items:start;gap:16px;">
+                            <div class="rec-number">2</div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+                                    <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Accelerate Working Capital to Sub-35 Days</h4>
+                                    <span class="tag tag-gold">High Impact</span>
+                                </div>
+                                <p style="font-size:14px;color:var(--fg-muted);margin-bottom:14px;line-height:1.7;">
+                                    At 41 days, FTG has improved working capital, but for a KES 4.23B manufacturing group, every day of working capital freed represents approximately KES 11.6M in cash. Reducing to 35 days would release ~KES 70M.
+                                </p>
+                                <div style="background:var(--bg);border-radius:8px;padding:16px 20px;">
+                                    <div style="font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">My Action Plan</div>
+                                    <ul style="font-size:13px;color:var(--fg-muted);line-height:2;padding-left:16px;">
+                                        <li>Implement a tiered credit policy for FMCG distributors — tighter terms for slow payers, early-payment discounts (2/10 net 30) for fast payers</li>
+                                        <li>Deploy AI-driven receivables forecasting using my existing Claude/DeepSeek workflow to predict collection patterns and flag at-risk accounts 30 days before due date</li>
+                                        <li>Conduct ABC analysis of inventory — identify slow-moving SKUs (especially in new product launches like Alana Vitamin C) and implement targeted stock reduction</li>
+                                        <li>Establish weekly AR aging review meetings with Sales department heads — my proven approach from Devyani Food Industries</li>
+                                        <li>Renegotiate supplier payment terms to extend payables without damaging relationships — target 45-60 day terms for non-critical raw materials</li>
+                                    </ul>
+                                </div>
+                                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                                    <span class="tag tag-gray"><i class="fas fa-clock" style="font-size:10px;margin-right:4px;"></i> First 6 Months</span>
+                                    <span class="tag tag-gray"><i class="fas fa-bullseye" style="font-size:10px;margin-right:4px;"></i> Target: 35 days by Dec 2026, freeing KES 70M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 3 -->
+                    <div class="rec-card reveal stagger-3">
+                        <div style="display:flex;align-items:start;gap:16px;">
+                            <div class="rec-number">3</div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+                                    <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Implement SKU-Level Profitability & Product Costing Rigour</h4>
+                                    <span class="tag tag-gold">High Impact</span>
+                                </div>
+                                <p style="font-size:14px;color:var(--fg-muted);margin-bottom:14px;line-height:1.7;">
+                                    With new product launches (Alana Vitamin C, Loosafe, Wills relaunch) and significant capex in PET machinery, ensuring accurate product costing and SKU-level P&L visibility is essential. The report does not disclose segment-level profitability — this itself is a gap.
+                                </p>
+                                <div style="background:var(--bg);border-radius:8px;padding:16px 20px;">
+                                    <div style="font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">My Action Plan</div>
+                                    <ul style="font-size:13px;color:var(--fg-muted);line-height:2;padding-left:16px;">
+                                        <li>Build a comprehensive product costing model incorporating raw materials (especially petrochemical-linked costs), labour, machine-hour allocation for the new PET lines, and distribution costs</li>
+                                        <li>Create monthly SKU-level contribution margin reports for the GCFO — identify which products genuinely contribute to EBITDA vs. which consume working capital without adequate returns</li>
+                                        <li>Implement break-even analysis for each new product line (Alana, Loosafe, Wills) with scenario modelling for raw material price fluctuations</li>
+                                        <li>Track ROI on the 7 PET machines and 4 injection moulding machines — set up monthly capex utilisation and return tracking dashboards</li>
+                                        <li>Coordinate with Stores and Production for monthly stock reconciliation, ensuring inventory valuation accuracy (especially critical with petrochemical price volatility)</li>
+                                    </ul>
+                                </div>
+                                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                                    <span class="tag tag-gray"><i class="fas fa-clock" style="font-size:10px;margin-right:4px;"></i> First 3-6 Months</span>
+                                    <span class="tag tag-gray"><i class="fas fa-bullseye" style="font-size:10px;margin-right:4px;"></i> Target: Full SKU P&L visibility within 90 days</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 4 -->
+                    <div class="rec-card reveal stagger-4">
+                        <div style="display:flex;align-items:start;gap:16px;">
+                            <div class="rec-number">4</div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+                                    <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Strengthen Internal Controls & Governance Score</h4>
+                                    <span class="tag tag-green">Medium Priority</span>
+                                </div>
+                                <p style="font-size:14px;color:var(--fg-muted);margin-bottom:14px;line-height:1.7;">
+                                    The governance score of 81.60/100 is good but leaves nearly 19 points on the table. For a group with KES 4.23B revenue, operations across multiple countries, and significant capex, internal control rigour must be exceptional.
+                                </p>
+                                <div style="background:var(--bg);border-radius:8px;padding:16px 20px;">
+                                    <div style="font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">My Action Plan</div>
+                                    <ul style="font-size:13px;color:var(--fg-muted);line-height:2;padding-left:16px;">
+                                        <li>Conduct a comprehensive internal control assessment across all divisions within first 60 days, focusing on procurement-authorisation, cash handling, and inventory controls</li>
+                                        <li>Implement automated three-way matching (PO-Goods Received-Invoice) to reduce procurement fraud risk and improve processing speed</li>
+                                        <li>Strengthen segregation of duties documentation, especially in the new PET manufacturing lines where processes may still be maturing</li>
+                                        <li>Establish a risk-based internal audit plan aligned to the Audit Committee's priorities, with quarterly reporting</li>
+                                        <li>Target governance score improvement to 90/100 within 18 months through systematic control enhancement</li>
+                                    </ul>
+                                </div>
+                                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                                    <span class="tag tag-gray"><i class="fas fa-clock" style="font-size:10px;margin-right:4px;"></i> Ongoing — First 18 Months</span>
+                                    <span class="tag tag-gray"><i class="fas fa-bullseye" style="font-size:10px;margin-right:4px;"></i> Target: 90/100 governance score</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 5 -->
+                    <div class="rec-card reveal stagger-5">
+                        <div style="display:flex;align-items:start;gap:16px;">
+                            <div class="rec-number">5</div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+                                    <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Hedge Against Petrochemical Raw Material Volatility</h4>
+                                    <span class="tag tag-gold">Strategic</span>
+                                </div>
+                                <p style="font-size:14px;color:var(--fg-muted);margin-bottom:14px;line-height:1.7;">
+                                    The report explicitly flags the Iran conflict's impact on petrochemical raw material prices as a key risk. For a packaging and FMCG company where plastics are a primary input, this is an existential cost risk that requires proactive financial management.
+                                </p>
+                                <div style="background:var(--bg);border-radius:8px;padding:16px 20px;">
+                                    <div style="font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">My Action Plan</div>
+                                    <ul style="font-size:13px;color:var(--fg-muted);line-height:2;padding-left:16px;">
+                                        <li>Build a raw material price sensitivity model showing impact on gross margin at various petrochemical price points (+/- 10%, 20%, 30%)</li>
+                                        <li>Work with procurement to explore forward contracts or bulk purchasing agreements to lock in prices for 3-6 month horizons</li>
+                                        <li>Develop scenario-based budgeting that automatically adjusts COGS forecasts based on commodity price feeds</li>
+                                        <li>Evaluate the recycled plastic stream (1,353 tonnes already recycled) as a cost-stable alternative input source — model the economics</li>
+                                        <li>Prepare monthly cost risk reports for the GCFO and Board Risk Committee with early warning triggers</li>
+                                    </ul>
+                                </div>
+                                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                                    <span class="tag tag-gray"><i class="fas fa-clock" style="font-size:10px;margin-right:4px;"></i> First 3 Months</span>
+                                    <span class="tag tag-gray"><i class="fas fa-bullseye" style="font-size:10px;margin-right:4px;"></i> Target: Commodity risk dashboard live by Month 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 6 -->
+                    <div class="rec-card reveal stagger-6">
+                        <div style="display:flex;align-items:start;gap:16px;">
+                            <div class="rec-number">6</div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+                                    <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Modernise Financial Reporting with AI Automation</h4>
+                                    <span class="tag tag-green">Differentiator</span>
+                                </div>
+                                <p style="font-size:14px;color:var(--fg-muted);margin-bottom:14px;line-height:1.7;">
+                                    The JD explicitly lists "familiarity with AI tools for financial analysis, automation and reporting" as an added advantage. This is where I can deliver immediate, visible value that no traditional CPA candidate can match.
+                                </p>
+                                <div style="background:var(--bg);border-radius:8px;padding:16px 20px;">
+                                    <div style="font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">My Action Plan</div>
+                                    <ul style="font-size:13px;color:var(--fg-muted);line-height:2;padding-left:16px;">
+                                        <li>Deploy AI-automated MIS: use Claude/DeepSeek to auto-generate variance analysis narratives, reducing month-end close reporting time by 40-50%</li>
+                                        <li>Build interactive financial dashboards in Excel/Power BI with automated data feeds, replacing static monthly reports</li>
+                                        <li>Implement AI-assisted audit schedule preparation — auto-populate recurring entries, flag anomalies, and generate draft reconciliation summaries</li>
+                                        <li>Create an AI-powered cash flow prediction model that learns from historical patterns and provides daily forecasts to the GCFO</li>
+                                        <li>Automate statutory compliance tracking — VAT, PAYE, NSSF, SHIF filing calendars with AI-generated reminders and pre-filled templates</li>
+                                    </ul>
+                                </div>
+                                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
+                                    <span class="tag tag-gray"><i class="fas fa-clock" style="font-size:10px;margin-right:4px;"></i> Immediate — From Day 1</span>
+                                    <span class="tag tag-gray"><i class="fas fa-bullseye" style="font-size:10px;margin-right:4px;"></i> Target: 50% faster month-end close within 6 months</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Section 4: 90-Day Roadmap -->
+        <section id="roadmap" style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">First 90 Days — Impact Roadmap</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:700px;">A structured plan demonstrating how I would create visible value from the first week, building credibility with the GCFO, CEO, and the broader leadership team.</p>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:24px;">
+                    <!-- Phase 1 -->
+                    <div class="reveal stagger-1">
+                        <div style="background:var(--green-deep);border-radius:12px 12px 0 0;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+                            <div>
+                                <div style="color:var(--accent-light);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Phase 1</div>
+                                <div style="color:white;font-size:18px;font-weight:700;font-family:'Playfair Display',serif;">Days 1-30</div>
+                            </div>
+                            <div style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-search" style="color:var(--accent-light);font-size:16px;"></i>
+                            </div>
+                        </div>
+                        <div class="card" style="border-radius:0 0 12px 12px;border-top:none;padding:24px;">
+                            <div style="font-weight:600;font-size:14px;color:var(--green-deep);margin-bottom:14px;">Observe, Learn & Quick Wins</div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 1-2:</strong> Study existing accounting processes, ERP setup, chart of accounts, and reporting templates. Meet all departmental heads.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 2-3:</strong> Review current AR aging, identify top 20 overdue accounts, and initiate immediate collection calls for critical items.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 3-4:</strong> Assess current internal controls, document gaps, and present initial findings to GCFO with prioritised action list.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Quick Win:</strong> Deploy AI-assisted cash flow forecast template — demonstrate immediate technology value to leadership.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="reveal stagger-2">
+                        <div style="background:var(--green-mid);border-radius:12px 12px 0 0;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+                            <div>
+                                <div style="color:var(--accent-light);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Phase 2</div>
+                                <div style="color:white;font-size:18px;font-weight:700;font-family:'Playfair Display',serif;">Days 31-60</div>
+                            </div>
+                            <div style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-cogs" style="color:var(--accent-light);font-size:16px;"></i>
+                            </div>
+                        </div>
+                        <div class="card" style="border-radius:0 0 12px 12px;border-top:none;padding:24px;">
+                            <div style="font-weight:600;font-size:14px;color:var(--green-deep);margin-bottom:14px;">Build, Implement & Measure</div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 5-6:</strong> Implement revised credit control policy with tiered terms. Begin weekly AR review meetings with Sales.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 6-7:</strong> Build SKU-level costing model for top 50 products (by revenue). Present first product profitability snapshot to GCFO.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 7-8:</strong> Develop petrochemical price sensitivity model. Present commodity risk dashboard to management.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Milestone:</strong> Deliver first AI-enhanced monthly management report — demonstrate 30% reduction in preparation time.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="reveal stagger-3">
+                        <div style="background:var(--green-light);border-radius:12px 12px 0 0;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+                            <div>
+                                <div style="color:rgba(255,255,255,0.8);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Phase 3</div>
+                                <div style="color:white;font-size:18px;font-weight:700;font-family:'Playfair Display',serif;">Days 61-90</div>
+                            </div>
+                            <div style="width:40px;height:40px;background:rgba(255,255,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-chart-line" style="color:white;font-size:16px;"></i>
+                            </div>
+                        </div>
+                        <div class="card" style="border-radius:0 0 12px 12px;border-top:none;padding:24px;">
+                            <div style="font-weight:600;font-size:14px;color:var(--green-deep);margin-bottom:14px;">Optimise, Report & Strategise</div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 9-10:</strong> Conduct first full stock reconciliation with Stores and Production under new processes. Resolve discrepancies.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 10-11:</strong> Present comprehensive 90-day report to GCFO and CEO: control improvements, cash freed, cost reductions, and forward plan.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Week 11-12:</strong> Support GCFO in budget preparation for FY2027 with AI-enhanced forecasting models and bottom-up cost assumptions.
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div style="font-size:13px;color:var(--fg-muted);line-height:1.6;">
+                                    <strong style="color:var(--fg);">Target Outcome:</strong> Measurable improvement in working capital days, AR collection rates, and team productivity by end of quarter.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expected Impact Summary -->
+                <div class="reveal" style="margin-top:40px;">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;">
+                        <div class="impact-card">
+                            <div style="position:relative;z-index:1;">
+                                <div style="color:var(--accent-light);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Working Capital Freed</div>
+                                <div style="font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;">KES 70M+</div>
+                                <div style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:4px;">By reducing WC days from 41 to 35</div>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div style="position:relative;z-index:1;">
+                                <div style="color:var(--accent-light);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Month-End Close Time</div>
+                                <div style="font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;">-50%</div>
+                                <div style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:4px;">Through AI-automated MIS</div>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div style="position:relative;z-index:1;">
+                                <div style="color:var(--accent-light);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Finance Cost Target</div>
+                                <div style="font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;">KES 220M</div>
+                                <div style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:4px;">Down from KES 295.4M via restructuring</div>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div style="position:relative;z-index:1;">
+                                <div style="color:var(--accent-light);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Governance Score</div>
+                                <div style="font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;">90/100</div>
+                                <div style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:4px;">Up from 81.60 in 18 months</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Section 5: Relevant Experience -->
+        <section id="experience" style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">Relevant Experience — FTG Context</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:700px;">Career highlights specifically relevant to the Flame Tree Group Chief Accountant role, mapped to the company's operating context.</p>
+                </div>
+
+                <!-- Most relevant first -->
+                <div style="display:flex;flex-direction:column;gap:20px;">
+                    <div class="card reveal" style="padding:28px;border-left:4px solid var(--accent);">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+                            <div>
+                                <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Manager — Credit Control & Logistics</h4>
+                                <div style="font-size:14px;color:var(--fg-muted);">RJ Corp / Devyani Food Industries Ltd &middot; <strong>Nairobi, Kenya</strong></div>
+                                <div style="font-size:12px;color:var(--fg-light);margin-top:2px;">November 2015 — May 2023 (7.5 years)</div>
+                            </div>
+                            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                                <span class="tag tag-green">Kenya</span>
+                                <span class="tag tag-green">FMCG</span>
+                                <span class="tag tag-gold">Most Relevant</span>
+                            </div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);margin-bottom:16px;line-height:1.7;">
+                            This is the single most relevant role for FTG. Devyani Food Industries is a large FMCG manufacturing and distribution company operating in Kenya — the same sector and geography as Flame Tree Group. Every skill listed in the JD was practiced here.
+                        </p>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:12px;">
+                            <div style="background:var(--bg);border-radius:8px;padding:12px 16px;">
+                                <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">FTG Relevance</div>
+                                <div style="font-size:13px;color:var(--fg);font-weight:500;">End-to-end AR & Credit Control</div>
+                                <div style="font-size:12px;color:var(--fg-muted);margin-top:2px;">Directly maps to FTG's need for working capital improvement and collections management</div>
+                            </div>
+                            <div style="background:var(--bg);border-radius:8px;padding:12px 16px;">
+                                <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">FTG Relevance</div>
+                                <div style="font-size:13px;color:var(--fg);font-weight:500;">Kenyan Tax Compliance</div>
+                                <div style="font-size:12px;color:var(--fg-muted);margin-top:2px;">VAT, PAYE, NSSF filings with KRA — exact statutory requirements in the JD</div>
+                            </div>
+                            <div style="background:var(--bg);border-radius:8px;padding:12px 16px;">
+                                <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">FTG Relevance</div>
+                                <div style="font-size:13px;color:var(--fg);font-weight:500;">Logistics Cost Reduction</div>
+                                <div style="font-size:12px;color:var(--fg-muted);margin-top:2px;">10% logistics cost saving, 15% faster delivery — applicable to FTG's distribution network</div>
+                            </div>
+                            <div style="background:var(--bg);border-radius:8px;padding:12px 16px;">
+                                <div style="font-size:11px;color:var(--fg-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">FTG Relevance</div>
+                                <div style="font-size:13px;color:var(--fg);font-weight:500;">Swahili & Stakeholder Skills</div>
+                                <div style="font-size:12px;color:var(--fg-muted);margin-top:2px;">Professional Swahili for KRA, bank, and local team interactions — critical for Nairobi role</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card reveal" style="padding:28px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+                            <div>
+                                <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Sr. Manager — Accounts & Commercial</h4>
+                                <div style="font-size:14px;color:var(--fg-muted);">TSI Architects & Engineers &middot; Manali, India</div>
+                                <div style="font-size:12px;color:var(--fg-light);margin-top:2px;">May 2023 — Current</div>
+                            </div>
+                            <div style="display:flex;gap:6px;">
+                                <span class="tag tag-green">Procurement</span>
+                                <span class="tag tag-green">Cost Control</span>
+                            </div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);margin-bottom:16px;line-height:1.7;">
+                            Current role demonstrating senior-level commercial leadership, budgeting, contract management, and procurement — all directly applicable to FTG's need for cost control initiatives and vendor management (especially for petrochemical raw materials).
+                        </p>
+                        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:32px;height:32px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <span style="font-weight:700;font-size:13px;color:var(--green-deep);">15-20%</span>
+                                </div>
+                                <span style="font-size:13px;color:var(--fg-muted);">Procurement cost savings</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:32px;height:32px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-file-contract" style="color:var(--green-deep);font-size:13px;"></i>
+                                </div>
+                                <span style="font-size:13px;color:var(--fg-muted);">Contract administration</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:32px;height:32px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-chart-pie" style="color:var(--green-deep);font-size:13px;"></i>
+                                </div>
+                                <span style="font-size:13px;color:var(--fg-muted);">Budget & compliance oversight</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card reveal" style="padding:28px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+                            <div>
+                                <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Manager — Finance, Accounts & Commercial</h4>
+                                <div style="font-size:14px;color:var(--fg-muted);">Hiralco Limited &middot; Accra, Ghana</div>
+                                <div style="font-size:12px;color:var(--fg-light);margin-top:2px;">January 2015 — August 2015</div>
+                            </div>
+                            <div style="display:flex;gap:6px;">
+                                <span class="tag tag-green">Africa</span>
+                                <span class="tag tag-green">Audit</span>
+                            </div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">
+                            Managed full-spectrum finance operations across Ghana and Nigeria — multi-country African experience. Handled budgeting, cash flow management, audit coordination, fixed assets, and inventory controls. Demonstrates ability to operate effectively in the African regulatory and business environment beyond Kenya.
+                        </p>
+                    </div>
+
+                    <div class="card reveal" style="padding:28px;">
+                        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+                            <div>
+                                <h4 style="font-size:16px;font-weight:700;color:var(--green-deep);">Asst. Manager — Accounts Receivable</h4>
+                                <div style="font-size:14px;color:var(--fg-muted);">Faces Cosmetics India Ltd &middot; Gurgaon, India</div>
+                                <div style="font-size:12px;color:var(--fg-light);margin-top:2px;">April 2010 — January 2015</div>
+                            </div>
+                            <div style="display:flex;gap:6px;">
+                                <span class="tag tag-gold">Cosmetics/FMCG</span>
+                                <span class="tag tag-green">AR Expert</span>
+                            </div>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">
+                            <strong style="color:var(--fg);">Directly relevant to FTG's beauty & personal care segment</strong> (Wills Antiseptic, Alana Vitamin C skincare). Managed AR/AP for a cosmetics company — understands the unique dynamics of beauty product distribution, seasonal demand patterns, and retail channel credit management. Reduced bad debt exposure through proactive credit monitoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Section 6: Tools & AI Capability -->
+        <section style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">Technical Arsenal</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:700px;">Systems, tools, and capabilities I bring — mapped to every technical requirement in the Chief Accountant JD.</p>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:16px;">
+                    <div class="card reveal stagger-1" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+                            <div style="width:42px;height:42px;background:var(--green-deep);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-database" style="color:var(--accent-light);font-size:16px;"></i>
+                            </div>
+                            <div style="font-weight:600;font-size:15px;color:var(--green-deep);">ERP Systems</div>
+                        </div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <span class="tag tag-green">SAP ERP</span>
+                            <span class="tag tag-green">Tally ERP</span>
+                            <span class="tag tag-green">Wiza ERP</span>
+                            <span class="tag tag-green">Techsmith ERP</span>
+                            <span class="tag tag-green">Vesta ERP</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--fg-light);margin-top:12px;">JD requires: SAP, Oracle, NetSuite or other ERP — 5 systems mastered, rapid adaptation to any new system.</p>
+                    </div>
+
+                    <div class="card reveal stagger-2" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+                            <div style="width:42px;height:42px;background:var(--green-deep);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-table" style="color:var(--accent-light);font-size:16px;"></i>
+                            </div>
+                            <div style="font-weight:600;font-size:15px;color:var(--green-deep);">Advanced Excel & Analytics</div>
+                        </div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <span class="tag tag-green">Pivot Tables</span>
+                            <span class="tag tag-green">Dashboards</span>
+                            <span class="tag tag-green">Financial Modeling</span>
+                            <span class="tag tag-green">Data Analysis</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--fg-light);margin-top:12px;">JD requires: Advanced Excel with pivot tables, dashboards, financial modeling — all core daily tools for 20+ years.</p>
+                    </div>
+
+                    <div class="card reveal stagger-3" style="padding:24px;border-color:var(--accent);background:linear-gradient(135deg,#FEFDFB,#FEF9F0);">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+                            <div style="width:42px;height:42px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-robot" style="color:white;font-size:16px;"></i>
+                            </div>
+                            <div style="font-weight:600;font-size:15px;color:var(--accent-dark);">AI & Automation</div>
+                            <span class="tag tag-gold" style="font-size:10px;">DIFFERENTIATOR</span>
+                        </div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <span class="tag tag-gold">Claude</span>
+                            <span class="tag tag-gold">Grok</span>
+                            <span class="tag tag-gold">DeepSeek</span>
+                            <span class="tag tag-gold">MS 365 Copilot</span>
+                            <span class="tag tag-gold">GitHub</span>
+                            <span class="tag tag-gold">Lovable AI</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--accent-dark);margin-top:12px;font-weight:500;">JD says: "Added advantage" — this is my unique competitive edge over every traditional CPA candidate.</p>
+                    </div>
+
+                    <div class="card reveal stagger-4" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+                            <div style="width:42px;height:42px;background:var(--green-deep);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-balance-scale" style="color:var(--accent-light);font-size:16px;"></i>
+                            </div>
+                            <div style="font-weight:600;font-size:15px;color:var(--green-deep);">Compliance & Standards</div>
+                        </div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <span class="tag tag-green">IFRS</span>
+                            <span class="tag tag-green">KRA / VAT / PAYE</span>
+                            <span class="tag tag-green">NSSF / SHIF</span>
+                            <span class="tag tag-green">Audit Coordination</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--fg-light);margin-top:12px;">JD requires: Kenyan tax laws, IFRS, statutory compliance, audit management — proven hands-on experience in Kenya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Section 7: What's Missing in the Report -->
+        <section style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="margin-bottom:48px;">
+                    <div class="gold-line" style="margin-bottom:16px;"></div>
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;">What the FY2025 Report Doesn't Tell Us</h2>
+                    <p style="color:var(--fg-muted);font-size:15px;max-width:700px;">Notable absences in the published financials that I would seek to address and improve upon as Chief Accountant — bringing greater transparency and decision-usefulness to FTG's reporting.</p>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:16px;">
+                    <div class="card reveal stagger-1" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                            <i class="fas fa-question-circle" style="color:var(--accent);font-size:18px;"></i>
+                            <h4 style="font-size:15px;font-weight:700;color:var(--green-deep);">Segment-Level Profitability</h4>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">The report gives growth rates (8% for Water/Packaging, 5.1% for FMCG) but no segment-level EBITDA or profit margins. As Chief Accountant, I would ensure segment P&L reporting is part of the monthly management pack — the GCFO and Board need to know which segment is truly driving (or eroding) value.</p>
+                    </div>
+
+                    <div class="card reveal stagger-2" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                            <i class="fas fa-question-circle" style="color:var(--accent);font-size:18px;"></i>
+                            <h4 style="font-size:15px;font-weight:700;color:var(--green-deep);">Debt Maturity Profile</h4>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">We know total finance costs and net debt/EBITDA, but not the maturity profile — how much debt is due in the next 12 months vs. long-term? This is critical for liquidity planning. I would prepare a detailed debt schedule with maturity buckets, covenants, and refinancing timelines.</p>
+                    </div>
+
+                    <div class="card reveal stagger-3" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                            <i class="fas fa-question-circle" style="color:var(--accent);font-size:18px;"></i>
+                            <h4 style="font-size:15px;font-weight:700;color:var(--green-deep);">Capex ROI Tracking</h4>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">Seven PET machines and four injection moulding machines represent significant investment, but no ROI or payback period is disclosed. I would implement a capex register tracking each asset's actual vs. projected returns, utilisation rates, and contribution to the depreciation burden.</p>
+                    </div>
+
+                    <div class="card reveal stagger-4" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                            <i class="fas fa-question-circle" style="color:var(--accent);font-size:18px;"></i>
+                            <h4 style="font-size:15px;font-weight:700;color:var(--green-deep);">Cash Flow Statement Details</h4>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">The summary doesn't include operating, investing, or financing cash flow breakdowns. For a company with KES 295M in finance costs, understanding free cash flow dynamics is essential. I would ensure robust cash flow reporting with clear separation of operational vs. financing cash movements.</p>
+                    </div>
+
+                    <div class="card reveal stagger-5" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                            <i class="fas fa-question-circle" style="color:var(--accent);font-size:18px;"></i>
+                            <h4 style="font-size:15px;font-weight:700;color:var(--green-deep);">AR Aging & Collection Metrics</h4>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">Working capital improved to 41 days, but there's no disclosure of AR aging buckets (current, 30-60, 60-90, 90+). This is my core expertise — I would introduce monthly AR aging dashboards with DSO trends, provision coverage, and collection efficiency ratios.</p>
+                    </div>
+
+                    <div class="card reveal stagger-6" style="padding:24px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                            <i class="fas fa-question-circle" style="color:var(--accent);font-size:18px;"></i>
+                            <h4 style="font-size:15px;font-weight:700;color:var(--green-deep);">Share Liquidity & Investor Communication</h4>
+                        </div>
+                        <p style="font-size:13px;color:var(--fg-muted);line-height:1.7;">Total 12-month share liquidity of only US$328K (KES 41.69M) is extremely low — approximately US$27K/month. This signals weak investor interest, likely driven by the persistent net loss. Improved financial reporting transparency and a clear path to profitability would be essential to rebuild investor confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height:1px;background:var(--border);margin:0 24px;"></div>
+
+        <!-- Closing / CTA Section -->
+        <section style="padding:80px 0;">
+            <div class="section-container">
+                <div class="reveal" style="max-width:800px;margin:0 auto;text-align:center;">
+                    <div class="gold-line" style="margin:0 auto 24px;"></div>
+                    <h2 style="font-size:2.2rem;font-weight:800;color:var(--green-deep);margin-bottom:16px;line-height:1.2;">
+                        Ready to Contribute from Day One
+                    </h2>
+                    <p style="font-size:15px;color:var(--fg-muted);line-height:1.8;margin-bottom:32px;">
+                        I have studied FTG Holdings' FY2025 financials in detail. I understand where the Group excels, where the structural challenges lie, and what the Chief Accountant role demands. My 20+ years across FMCG, manufacturing, and commercial operations — combined with deep Kenyan market experience and AI-driven finance capabilities — position me to deliver immediate, measurable impact.
+                    </p>
+
+                    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-bottom:40px;text-align:center;">
+                        <div style="padding:20px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+                            <div style="font-size:2rem;font-weight:800;color:var(--green-deep);font-family:'Playfair Display',serif;">20+</div>
+                            <div style="font-size:12px;color:var(--fg-muted);margin-top:4px;">Years Experience</div>
+                        </div>
+                        <div style="padding:20px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+                            <div style="font-size:2rem;font-weight:800;color:var(--green-deep);font-family:'Playfair Display',serif;">7.5</div>
+                            <div style="font-size:12px;color:var(--fg-muted);margin-top:4px;">Years in Kenya</div>
+                        </div>
+                        <div style="padding:20px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+                            <div style="font-size:2rem;font-weight:800;color:var(--accent);font-family:'Playfair Display',serif;">AI</div>
+                            <div style="font-size:12px;color:var(--fg-muted);margin-top:4px;">First-Mover Advantage</div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                        <a href="https://samarjeetjamwal.github.io/portfolio/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--green-deep);color:white;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--green-mid)'" onmouseout="this.style.background='var(--green-deep)'">
+                            View Full Portfolio <i class="fas fa-external-link-alt" style="font-size:12px;"></i>
+                        </a>
+                        <a href="mailto:samarjeetjamwal@gmail.com" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--accent);color:var(--green-deep);border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--accent-light)'" onmouseout="this.style.background='var(--accent)'">
+                            <i class="fas fa-envelope" style="font-size:13px;"></i> Get in Touch
+                        </a>
+                    </div>
+
+                    <div style="margin-top:40px;padding:20px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;">
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <i class="fas fa-phone" style="color:var(--green-mid);font-size:13px;"></i>
+                            <span style="font-size:13px;color:var(--fg-muted);">+91 93179 50702</span>
+                        </div>
+                        <div style="width:1px;height:16px;background:var(--border);"></div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <i class="fas fa-envelope" style="color:var(--green-mid);font-size:13px;"></i>
+                            <span style="font-size:13px;color:var(--fg-muted);">samarjeetjamwal@gmail.com</span>
+                        </div>
+                        <div style="width:1px;height:16px;background:var(--border);"></div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <i class="fas fa-map-marker-alt" style="color:var(--green-mid);font-size:13px;"></i>
+                            <span style="font-size:13px;color:var(--fg-muted);">Chandigarh, India (Available for Nairobi)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="background:var(--green-deep);padding:32px 0;">
+            <div class="section-container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="width:28px;height:28px;background:rgba(255,255,255,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+                        <span style="color:var(--accent-light);font-weight:800;font-size:11px;font-family:'Playfair Display',serif;">SJ</span>
+                    </div>
+                    <span style="color:rgba(255,255,255,0.5);font-size:12px;">Job Alignment Portfolio — Chief Accountant, FTG Holdings Ltd</span>
+                </div>
+                <div style="color:rgba(255,255,255,0.3);font-size:11px;">
+                    Prepared with professional diligence &middot; Confidential
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Scroll-triggered reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate match bars within this element
+                    const bars = entry.target.querySelectorAll('.match-bar-fill');
+                    bars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        if (width) {
+                            setTimeout(() => {
+                                bar.style.width = width + '%';
+                            }, 200);
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Fixed navigation show/hide
+        const nav = document.getElementById('topNav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            // Show nav after scrolling past hero (approximately 500px)
+            if (currentScroll > 500) {
+                nav.classList.add('show');
+            } else {
+                nav.classList.remove('show');
+            }
+
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // Responsive hero grid
+        const heroLayout = document.querySelector('.hero-grid-layout');
+        function handleHeroResize() {
+            if (window.innerWidth < 768) {
+                heroLayout.style.gridTemplateColumns = '1fr';
+                heroLayout.style.gap = '32px';
+            } else {
+                heroLayout.style.gridTemplateColumns = '1fr auto';
+                heroLayout.style.gap = '48px';
+            }
+        }
+        handleHeroResize();
+        window.addEventListener('resize', handleHeroResize);
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-link, a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offset = 80; // Account for fixed nav
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
